@@ -1,4 +1,4 @@
-module Main where
+module HMain where
 
 import Idris.Core.TT
 import Idris.AbsSyntax
@@ -34,11 +34,11 @@ java_main opts = do elabPrims
                     ir <- compile (Via "java") (output opts) mainProg
                     runIO $ codegenJava ir
 
-main :: IO ()
-main = do opts <- getOpts
+hmain :: IO ()
+hmain = do opts <- getOpts
           if (null (inputs opts)) 
              then showUsage
              else runMain (java_main opts)
 
-
+foreign export ccall hmain :: IO ()
 
