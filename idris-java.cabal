@@ -7,9 +7,9 @@ Build-Type:	Simple
 Cabal-Version:  >= 1.8
 
 Executable idris-java
-  Main-is:        Main.hs
+  Main-is:        main.c
   hs-source-dirs: src/haskell
-  c-sources: src/c/main.c
+  --c-sources: src/c/main.c
 
   Build-depends:  idris
                 , base
