@@ -11,6 +11,8 @@ import IRTS.CodegenJava
 import System.Environment
 import System.Exit
 
+import Foreign.C.Types
+
 data Opts = Opts { inputs :: [FilePath],
                    output :: FilePath }
 
