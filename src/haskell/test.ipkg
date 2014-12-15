@@ -1,4 +1,4 @@
 package test
 
 modules = IMain
-libs = ../../dist/build/libHSidris-java-0.0.0.1.a
+objs = ../../dist/build/libHSidris-java-0.0.0.1.a
