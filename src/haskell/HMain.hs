@@ -16,6 +16,7 @@ import System.Exit
 data Opts = Opts { inputs :: [FilePath],
                    output :: FilePath }
 
+showUsage :: IO ()
 showUsage = do putStrLn "Usage: idris-java <ibc-files> [-o <output-file>]"
                exitWith ExitSuccess
 
@@ -34,8 +35,10 @@ java_main opts = do elabPrims
                     ir <- compile (Via "java") (output opts) mainProg
                     runIO $ codegenJava ir
 
---hmain :: IO ()
---hmain = do opts <- getOpts
+hmain :: IO ([FilePath])
+hmain = do opts <- getOpts
+           inputs opts
+
 --          if (null (inputs opts)) 
 --             then showUsage
 --             else runMain (java_main opts)
