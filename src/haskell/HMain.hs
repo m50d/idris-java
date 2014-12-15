@@ -35,10 +35,11 @@ java_main opts = do elabPrims
                     ir <- compile (Via "java") (output opts) mainProg
                     runIO $ codegenJava ir
 
-hmain :: IO ([FilePath])
+hmain :: IO ()
 hmain = do opts <- getOpts
-           inputs opts
+           putStrLn "hello"
 
+--           inputs opts
 --          if (null (inputs opts)) 
 --             then showUsage
 --             else runMain (java_main opts)
