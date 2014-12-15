@@ -6,8 +6,9 @@ Author:         Jan Bessai
 Build-Type:	Simple
 Cabal-Version:  >= 1.8
 
-Executable idris-java
-  Main-is: main.c
+Library
+--Executable idris-java
+--  Main-is: main.c
   hs-source-dirs: src/haskell
   --c-sources: src/c/main.c
 
