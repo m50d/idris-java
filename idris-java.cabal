@@ -7,7 +7,7 @@ Build-Type:	Simple
 Cabal-Version:  >= 1.8
 
 Executable idris-java
-  Main-is:        main.c
+  Main-is: main.c
   hs-source-dirs: src/haskell
   --c-sources: src/c/main.c
 
@@ -31,6 +31,7 @@ Executable idris-java
                , IRTS.Java.Mangling
                , IRTS.Java.Pom
                , HMain
+--               , IMain.
 
   if os(linux)
      cpp-options:   -DLINUX
@@ -49,5 +50,6 @@ Executable idris-java
      build-depends: Win32 < 2.4
 
   ghc-prof-options: -auto-all -caf-all
-  ghc-options:      -threaded -rtsopts -funbox-strict-fields -XForeignFunctionInterface
+  ghc-options:      -threaded -funbox-strict-fields 
+  extensions:       ForeignFunctionInterface
 
