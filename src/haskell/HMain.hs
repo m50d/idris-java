@@ -11,7 +11,7 @@ import IRTS.CodegenJava
 import System.Environment
 import System.Exit
 
-import Foreign.C.Types
+--import Foreign.C.Types
 
 data Opts = Opts { inputs :: [FilePath],
                    output :: FilePath }
@@ -34,11 +34,11 @@ java_main opts = do elabPrims
                     ir <- compile (Via "java") (output opts) mainProg
                     runIO $ codegenJava ir
 
-hmain :: IO ()
-hmain = do opts <- getOpts
-          if (null (inputs opts)) 
-             then showUsage
-             else runMain (java_main opts)
+--hmain :: IO ()
+--hmain = do opts <- getOpts
+--          if (null (inputs opts)) 
+--             then showUsage
+--             else runMain (java_main opts)
 
-foreign export ccall hmain :: IO ()
+--foreign export ccall hmain :: IO ()
 
