@@ -37,12 +37,9 @@ java_main opts = do elabPrims
 
 hmain :: IO ()
 hmain = do opts <- getOpts
-           putStrLn "hello"
-
---           inputs opts
---          if (null (inputs opts)) 
---             then showUsage
---             else runMain (java_main opts)
+           if (null (inputs opts)) 
+             then showUsage
+             else runMain (java_main opts)
 
 foreign export ccall hmain :: IO ()
 
