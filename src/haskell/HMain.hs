@@ -11,7 +11,7 @@ import IRTS.CodegenJava
 import System.Environment
 import System.Exit
 
---import Foreign.C.Types
+import Foreign.C.Types
 
 data Opts = Opts { inputs :: [FilePath],
                    output :: FilePath }
@@ -44,5 +44,5 @@ hmain = do opts <- getOpts
 --             then showUsage
 --             else runMain (java_main opts)
 
---foreign export ccall hmain :: IO ()
+foreign export ccall hmain :: IO ()
 

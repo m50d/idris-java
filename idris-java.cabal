@@ -49,5 +49,5 @@ Executable idris-java
      build-depends: Win32 < 2.4
 
   ghc-prof-options: -auto-all -caf-all
-  ghc-options:      -threaded -rtsopts -funbox-strict-fields
+  ghc-options:      -threaded -rtsopts -funbox-strict-fields -XForeignFunctionInterface
 
