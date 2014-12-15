@@ -30,6 +30,7 @@ Executable idris-java
                , IRTS.Java.JTypes
                , IRTS.Java.Mangling
                , IRTS.Java.Pom
+               , HMain
 
   if os(linux)
      cpp-options:   -DLINUX
