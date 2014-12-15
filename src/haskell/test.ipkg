@@ -2,7 +2,9 @@ package test
 
 modules = IMain
 
-objs = test.a
+makefile = Makefile
+
+objs = ASTBuilding.o, CodegenJava.o, HMain.o, JTypes.o, Mangling.o, Pom.o
 
 executable = idrisjava
 
