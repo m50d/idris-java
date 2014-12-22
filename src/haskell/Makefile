@@ -11,3 +11,17 @@ idris-java: IMain.idr IRTS/Java/ASTBuilding.o IRTS/CodegenJava.o HMain.o IRTS/Ja
 
 clean:
 	-rm -f *.o *.hi *.ibc *_stub.h
+# DO NOT DELETE: Beginning of Haskell dependencies
+IRTS/Java/Pom.o : IRTS/Java/Pom.hs
+IRTS/Java/Mangling.o : IRTS/Java/Mangling.hs
+IRTS/Java/JTypes.o : IRTS/Java/JTypes.hs
+IRTS/Java/ASTBuilding.o : IRTS/Java/ASTBuilding.hs
+IRTS/Java/ASTBuilding.o : IRTS/Java/JTypes.hi
+IRTS/CodegenJava.o : IRTS/CodegenJava.hs
+IRTS/CodegenJava.o : IRTS/Java/Pom.hi
+IRTS/CodegenJava.o : IRTS/Java/Mangling.hi
+IRTS/CodegenJava.o : IRTS/Java/JTypes.hi
+IRTS/CodegenJava.o : IRTS/Java/ASTBuilding.hi
+HMain.o : HMain.hs
+HMain.o : IRTS/CodegenJava.hi
+# DO NOT DELETE: End of Haskell dependencies
