@@ -1,3 +1,5 @@
 dist
 *.ibc
 *.o
+*.hi
+*_stub.h
