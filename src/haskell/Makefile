@@ -3,5 +3,8 @@ all: idris-java
 #idris-java: HMain.hs IMain.o
 #	ghc -no-hs-main $^ -o $@
 
-IMain.o: IMain.idr 
-	idris -c $< -o $@
+idris-java: IMain.idr ASTBuilding.o CodegenJava.o HMain.o JTypes.o Mangling.o Pom.o
+	idris $^ -o $@
+
+%.o: %.hs
+	ghc -c $< -o $@
