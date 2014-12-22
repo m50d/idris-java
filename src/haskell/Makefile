@@ -6,7 +6,7 @@ all: idris-java
 idris-java: IMain.idr IRTS/Java/ASTBuilding.o IRTS/CodegenJava.o HMain.o IRTS/Java/JTypes.o IRTS/Java/Mangling.o IRTS/Java/Pom.o
 	idris $^ -o $@
 
-%.o: %.hi
+%.hi: %.o
 	true
 
 %.o: %.hs
