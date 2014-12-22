@@ -8,3 +8,6 @@ idris-java: IMain.idr IRTS/Java/ASTBuilding.o IRTS/CodegenJava.o HMain.o IRTS/Ja
 
 %.o: %.hs
 	ghc -c $< -o $@
+
+clean:
+	-rm -f *.o *.hi *.ibc *_stub.h
