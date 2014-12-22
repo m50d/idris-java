@@ -4,7 +4,7 @@ all: idris-java
 #	ghc -no-hs-main $^ -o $@
 
 idris-java: IMain.idr IRTS/Java/ASTBuilding.o IRTS/CodegenJava.o HMain.o IRTS/Java/JTypes.o IRTS/Java/Mangling.o IRTS/Java/Pom.o
-	idris $^ -o $@
+	idris $< -o $@
 
 %.hi: %.o
 	true
