@@ -11,6 +11,8 @@ idris-java: IMain.idr IRTS/Java/ASTBuilding.o IRTS/CodegenJava.o HMain.o IRTS/Ja
 
 clean:
 	-rm -f *.o *.hi *.ibc *_stub.h
+
+#generated with ghc -M - should be part of the build really
 # DO NOT DELETE: Beginning of Haskell dependencies
 IRTS/Java/Pom.o : IRTS/Java/Pom.hs
 IRTS/Java/Mangling.o : IRTS/Java/Mangling.hs
